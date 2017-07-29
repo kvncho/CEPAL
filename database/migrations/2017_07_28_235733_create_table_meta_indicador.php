@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreaTableCiudad extends Migration
+class CreateTableMetaIndicador extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreaTableCiudad extends Migration
      */
     public function up()
     {
-        Schema::create('ciudad', function (Blueprint $table) {
-            $table->increments('ciudad_id');
-            $table->string('nombre_ciudad','220');
-
-            $table->string('estado','2');;
-        });
-
+        Schema::create('meta_indicador', function (Blueprint $table) {
+            $table->increments('meta_indicador_id');
+        $table->integer('meta_id')->unsigned();
+        $table->integer('indicador_id')->unsigned();
+    });
     }
 
     /**
@@ -29,6 +27,6 @@ class CreaTableCiudad extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ciudad');
+        Schema::dropIfExists('meta_indicador');
     }
 }

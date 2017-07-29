@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreaTableMeta extends Migration
+class CreateTableEncuestas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreaTableMeta extends Migration
      */
     public function up()
     {
-         Schema::create('meta', function (Blueprint $table) {
-            $table->increments('meta_id');
-            $table->string('descripcion_ES','600');
-            $table->string('descripcion_EN','600');
-            $table->string('numero_meta','20');
+        Schema::create('encuestas', function (Blueprint $table) {
+            $table->integer('encuestas_id')->unsigned();
+            $table->integer('users_id')->unsigned();
+            $table->integer('pais_id')->unsigned();
+            $table->datetime('fecha');
             $table->string('estado','2');
         });
-
     }
 
     /**
@@ -30,6 +29,6 @@ class CreaTableMeta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meta');
+        Schema::dropIfExists('encuestas');
     }
 }

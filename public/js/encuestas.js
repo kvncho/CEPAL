@@ -3,11 +3,9 @@ $(document).ready(function () {
 
     $('.hija').on('click',function () {
 
-        $objetivo = $('.padre').data('value');
-
-        $indicador = $(this).data('value');
-
-        $name_objetivo = $(this).parent('span').text();
+       $objetivo = $('.padre').data('value');
+       $indicador = $(this).data('value');
+       $name_objetivo = $(this).parent('span').text();
 
        if($(this).hasClass("active")){
            $(this).removeClass("active");

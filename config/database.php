@@ -46,16 +46,6 @@ return [
 
     'connections' => [
 
-        'sqlsrv' => [
-            'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', '192.168.200.250'),
-            'database' => env('DB_DATABASE', 'INEI_BDCEPAL_2017'),
-            'username' => env('DB_USERNAME', 'us_bdcepal_des'),
-            'password' => env('DB_PASSWORD', 'sastuhuvU7*G'),
-            'charset' => 'utf8',
-            'prefix' => '',
-        ],
-
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),

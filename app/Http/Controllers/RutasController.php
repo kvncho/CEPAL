@@ -14,9 +14,14 @@ class RutasController extends Controller
     public function menu()
     {
 
-     $table_objetivo = DB::table('objetivo')
+        $encuesta =  \App\Encuestas::with('preguntas')->get();
+
+        foreach ($encuesta as  $f) {
+            echo $f ;
+        }
+    /* $table_objetivo = DB::table('objetivo')
             ->select( 'numero_objetivo','descripcion_ES')
-            ->get();
+            ->get();*/
 
 
    /* select O.numero_objetivo ,i.numero_indicador as 'numero_indicador' from menu
@@ -40,7 +45,7 @@ class RutasController extends Controller
 
 
 
-        return view('users.home', compact('table_objetivo'));
+       // return view('users.home', compact('table_objetivo'));
        //  return view('users.home')->with(['table_objetivo' => $table_objetivo]);
         //return view('users.home',['objetivo' => $table_objetivo]);
     }

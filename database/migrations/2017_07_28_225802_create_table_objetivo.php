@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreaTableobjetivo extends Migration
+class CreateTableObjetivo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreaTableobjetivo extends Migration
      */
     public function up()
     {
-       Schema::create('objetivo', function (Blueprint $table) {
+        Schema::create('objetivo', function (Blueprint $table) {
             $table->increments('objetivo_id');
-            $table->string('descripcion_ES','500');
-            $table->string('descripcion_EN','500');
+            $table->string('descripcion_ES','600');
+            $table->string('descripcion_EN','600');
             $table->string('numero_objetivo','20');
             $table->string('estado','2');
-         });
-
+        });
     }
 
     /**

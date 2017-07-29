@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreaTableIndicador extends Migration
+class CreateTableIndicador extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,6 @@ class CreaTableIndicador extends Migration
             $table->string('numero_indicador','20');
             $table->string('estado','2');
         });
-
     }
 
     /**
